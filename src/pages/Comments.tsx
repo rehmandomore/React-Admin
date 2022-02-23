@@ -115,7 +115,7 @@ const Comments = ({ name }: Props) => (
           showButton,
           editButton,
         }) => (
-          <div className="p-7 bg-white ">
+          <div className="p-7 bg-white shadow-lg">
             <div className="flex items-center gap-2">
               {userIcon}
               <div>
