@@ -128,7 +128,7 @@ const Comments = ({ name }: Props) => (
               {about}
               <p className="ml-3 text-[#4c61da]">{aboutData}</p>
             </div>
-            <div className="flex justify-end mt-10 gap-5">
+            <div className="flex justify-end items-end mt-10 gap-5">
               {editButton}
               {showButton}
             </div>
@@ -137,9 +137,9 @@ const Comments = ({ name }: Props) => (
       )}
     </div>
     {/* Mobile View */}
-    <div className="p-5 space-y-8 lg:hidden block">
+    <div className="p-5 space-y-8 lg:hidden block ">
       {data.map(({ userIcon, username, info, date }) => (
-        <div className="flex items-start ">
+        <div className="flex items-start">
           {userIcon}
           <div className="flex flex-col ml-5 w-full">
             <div className="flex justify-between">
