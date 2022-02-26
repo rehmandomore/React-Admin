@@ -1,6 +1,3 @@
-import Aside from "@/components/Aside";
-import Data from "@/components/Data";
-import Header from "@/components/Header";
 import { BiUser } from "react-icons/bi";
 import { BiShowAlt } from "react-icons/bi";
 import { HiPencil } from "react-icons/hi";
@@ -101,56 +98,58 @@ const data = [
   },
 ];
 
-const Comments = ({ name }: Props) => (
-  <>
-    <div className="p-5 lg:grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 hidden">
-      {data.map(
-        ({
-          userIcon,
-          username,
-          date,
-          info,
-          about,
-          aboutData,
-          showButton,
-          editButton,
-        }) => (
-          <div className="p-7 bg-white shadow-lg">
-            <div className="flex items-center gap-2">
-              {userIcon}
-              <div>
-                {username}
-                <p className="text-gray-500 text-sm">{date}</p>
+const Comments = ({ name }: Props) => {
+  return (
+    <>
+      <div className="p-5 lg:grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 hidden">
+        {data.map(
+          ({
+            userIcon,
+            username,
+            date,
+            info,
+            about,
+            aboutData,
+            showButton,
+            editButton,
+          }) => (
+            <div className="p-7 bg-white shadow-lg">
+              <div className="flex items-center gap-2">
+                {userIcon}
+                <div>
+                  {username}
+                  <p className="text-gray-500 text-sm">{date}</p>
+                </div>
+              </div>
+              <div className="mt-10 pr-10">{info}</div>
+              <div className="flex  mt-10">
+                {about}
+                <p className="ml-3 text-[#4c61da]">{aboutData}</p>
+              </div>
+              <div className="flex justify-end items-end mt-10 gap-5">
+                {editButton}
+                {showButton}
               </div>
             </div>
-            <div className="mt-10 pr-10">{info}</div>
-            <div className="flex  mt-10">
-              {about}
-              <p className="ml-3 text-[#4c61da]">{aboutData}</p>
-            </div>
-            <div className="flex justify-end items-end mt-10 gap-5">
-              {editButton}
-              {showButton}
+          )
+        )}
+      </div>
+      {/* Mobile View */}
+      <div className="p-5 space-y-8 lg:hidden block ">
+        {data.map(({ userIcon, username, info, date }) => (
+          <div className="flex items-start">
+            {userIcon}
+            <div className="flex flex-col ml-5 w-full">
+              <div className="flex justify-between">
+                {username}
+                <p className="text-md text-gray-800"> {date}</p>
+              </div>
+              <p className="text-gray-500 mt-1">{info}</p>
             </div>
           </div>
-        )
-      )}
-    </div>
-    {/* Mobile View */}
-    <div className="p-5 space-y-8 lg:hidden block ">
-      {data.map(({ userIcon, username, info, date }) => (
-        <div className="flex items-start">
-          {userIcon}
-          <div className="flex flex-col ml-5 w-full">
-            <div className="flex justify-between">
-              {username}
-              <p className="text-md text-gray-800"> {date}</p>
-            </div>
-            <p className="text-gray-500 mt-1">{info}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </>
-);
+        ))}
+      </div>
+    </>
+  );
+};
 export default Comments;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { AiTwotoneFile, AiOutlineCaretLeft } from "react-icons/ai";
 import { SiGooglemessages } from "react-icons/si";
 import { BsTagsFill } from "react-icons/bs";
@@ -11,39 +11,27 @@ type Props = {
 const Aside: React.FC<Props> = ({ isVisible }) => {
   return (
     <div
-      className={`xl:w-72 lg:w-20 w-56 bg-white h-screen lg:relative absolute lg:shadow-none shadow-2xl  ${
-        isVisible ? "hidden" : "block"
+      className={`w-72 bg-white h-screen duration-700 lg:relative absolute lg:shadow-none shadow-2xl group-hover:-ml-72  ${
+        isVisible ? "-ml-72" : "ml-0"
       }`}
     >
       <ul className="space-y-2 mt-5">
         <li className="group hover:bg-gray-300">
           <Link to="/" className="flex items-center w-full p-3 px-5">
             <AiTwotoneFile className="text-primary text-2xl mr-3 group-hover:scale-125 duration-500" />
-            <p className="xl:block  lg:hidden block">Posts</p>
-            <div className="-right-12 absolute text-white bg-primary p-1 w-16 rounded-lg xl:group-hover:hidden lg:group-hover:flex items-center hidden">
-              <AiOutlineCaretLeft className="text-primary -left-[15px] text-2xl absolute" />
-              <p className="ml-2">Posts</p>
-            </div>
+            <p>Posts</p>
           </Link>
         </li>
-        <li className="group  hover:bg-gray-300">
+        <li className={`group  hover:bg-gray-300 `}>
           <Link to="/Comments" className="flex items-center w-full p-3 px-5">
             <SiGooglemessages className="text-primary  text-2xl mr-3 group-hover:scale-125 duration-500" />
-            <p className="xl:block lg:hidden block">Comments</p>
-            <div className="-right-24 absolute text-white bg-primary p-1 w-28 rounded-lg xl:group-hover:hidden lg:group-hover:flex items-center hidden">
-              <AiOutlineCaretLeft className="text-primary -left-[15px] text-2xl absolute" />
-              <p className="ml-3">Comments</p>
-            </div>
+            <p>Comments</p>
           </Link>
         </li>
         <li className="group  hover:bg-gray-300">
           <Link to="/Tags" className="flex items-center w-full p-3 px-5">
             <BsTagsFill className="text-primary  text-2xl mr-3 group-hover:scale-125 duration-500" />
-            <p className="xl:block lg:hidden block">Tags</p>
-            <div className="-right-12 absolute text-white bg-primary p-1 w-16 rounded-lg xl:group-hover:hidden lg:group-hover:flex items-center hidden">
-              <AiOutlineCaretLeft className="text-primary -left-[15px] text-2xl absolute" />
-              <p className="ml-3">Tags</p>
-            </div>
+            <p>Tags</p>
           </Link>
         </li>
       </ul>

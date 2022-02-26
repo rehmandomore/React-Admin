@@ -37,9 +37,12 @@ const Tags = () => {
   };
   return (
     <div className="m-10 w-96 bg-white shadow-md rounded-lg p-2 space-y-2">
-      <div className="card1">
+      <div className="Collapse-1 hover:bg-gray-100">
         <div className="p-3 flex justify-between">
-          <button onClick={handleFilterOpening1} className="flex items-center ">
+          <button
+            onClick={handleFilterOpening1}
+            className="flex items-center w-full"
+          >
             {!isOpen1 ? (
               <FiChevronDown className="text-3xl text-primary" />
             ) : (
@@ -52,7 +55,7 @@ const Tags = () => {
         </div>
         <div>
           {isOpen1 && (
-            <div className="p-3 bg-white ml-20">
+            <div className="p-3 bg-white pl-20">
               <div className="flex justify-between">
                 <p>Parkour</p>
                 <EditButton />
@@ -65,9 +68,12 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="card2">
+      <div className="Collapse-2 hover:bg-gray-100">
         <div className="p-3 flex justify-between">
-          <button onClick={handleFilterOpening2} className="flex items-center ">
+          <button
+            onClick={handleFilterOpening2}
+            className="flex items-center w-full"
+          >
             {!isOpen2 ? (
               <FiChevronDown className="text-3xl text-primary" />
             ) : (
@@ -80,7 +86,7 @@ const Tags = () => {
         </div>
         <div>
           {isOpen2 && (
-            <div className="p-3 bg-white ml-20">
+            <div className="p-3 bg-white pl-20">
               <div className="flex justify-between">
                 <p>Computing</p>
                 <EditButton />
@@ -97,9 +103,12 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="card3">
+      <div className="Collapse-3 hover:bg-gray-100">
         <div className="p-3 flex justify-between">
-          <button onClick={handleFilterOpening3} className="flex items-center ">
+          <button
+            onClick={handleFilterOpening3}
+            className="flex items-center w-full"
+          >
             {!isOpen3 ? (
               <FiChevronDown className="text-3xl text-primary" />
             ) : (
@@ -112,7 +121,7 @@ const Tags = () => {
         </div>
         <div>
           {isOpen3 && (
-            <div className="p-3 bg-white ml-20">
+            <div className="p-3 bg-white pl-20">
               <div className="flex justify-between">
                 <p>Node</p>
                 <EditButton />
@@ -125,9 +134,12 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="card4">
+      <div className="Collapse-4 hover:bg-gray-100">
         <div className="p-3 flex justify-between">
-          <button onClick={handleFilterOpening4} className="flex items-center ">
+          <button
+            onClick={handleFilterOpening4}
+            className="flex items-center w-full "
+          >
             {!isOpen4 ? (
               <FiChevronDown className="text-3xl text-primary" />
             ) : (
@@ -140,7 +152,7 @@ const Tags = () => {
         </div>
         <div>
           {isOpen4 && (
-            <div className="p-3 bg-white ml-20">
+            <div className="p-3 bg-white pl-20">
               <div className="flex justify-between">
                 <p>Nature</p>
                 <EditButton />
@@ -153,9 +165,12 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="card4">
+      <div className="Collapse-5 hover:bg-gray-100">
         <div className="p-3 flex justify-between">
-          <button onClick={handleFilterOpening5} className="flex items-center ">
+          <button
+            onClick={handleFilterOpening5}
+            className="flex items-center w-full"
+          >
             {!isOpen5 ? (
               <FiChevronDown className="text-3xl text-primary" />
             ) : (
@@ -168,7 +183,7 @@ const Tags = () => {
         </div>
         <div>
           {isOpen5 && (
-            <div className="p-3 bg-white ml-20">
+            <div className="p-3 bg-white pl-20">
               <div className="flex justify-between">
                 <p>Rap</p>
                 <EditButton />

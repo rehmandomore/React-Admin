@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { HiPencil } from "react-icons/hi";
 import { BiShowAlt } from "react-icons/bi";
 import { MdOutlineCancel } from "react-icons/md";
+import { GoSearch } from "react-icons/go";
 
-type Props = {
-  name?: string;
-};
+const TiTick = () => (
+  <div className="flex flex-col group cursor-pointer w-min ">
+    <TiTickOutline className="text-2xl text-primary" />
+    <div className="bg-gray-200 text-black rounded-lg p-1 px-4 text-md italic -ml-4 w-min absolute mt-7 group-hover:block hidden">
+      Yes
+    </div>
+  </div>
+);
+const Cancel = () => (
+  <div className="flex flex-col group cursor-pointer w-min ">
+    <MdOutlineCancel className="text-2xl text-red-600" />
+    <div className="bg-gray-200 text-black rounded-lg p-1 px-4 text-md italic -ml-4 w-min absolute mt-7 group-hover:block hidden">
+      No
+    </div>
+  </div>
+);
+
 const EditButton = () => (
   <button className="flex items-center">
     <HiPencil className="text-2xl text-[#3E51B5]" />
@@ -21,12 +36,12 @@ const ShowButton = () => (
   </button>
 );
 
-const data = [
+const USERS = [
   {
     id: 1,
     Title: "Fusce massa lorem, pulvinar a posuere ut, accumsan ac nisi",
     Published_at: "01/12/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 222,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -35,7 +50,7 @@ const data = [
     id: 2,
     Title: "Qui tempore rerum et voluptates",
     Published_at: "07/11/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 719,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -44,7 +59,7 @@ const data = [
     id: 3,
     Title: "Omnis voluptate enim similique est possimus",
     Published_at: "22/10/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 294,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -53,7 +68,7 @@ const data = [
     id: 4,
     Title: "Totam vel quasi a odio et nihil",
     Published_at: "19/10/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 721,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -62,7 +77,7 @@ const data = [
     id: 5,
     Title: "A voluptas eius eveniet ut commodi dolor",
     Published_at: "16/10/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 143,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -71,7 +86,7 @@ const data = [
     id: 6,
     Title: "Culpa possimus quibusdam nostrum enim tempore rerum odit excepturi",
     Published_at: "10/06/2012",
-    Com: <MdOutlineCancel className="text-red-600 text-2xl" />,
+    Com: <Cancel />,
     Views: 557,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -80,7 +95,7 @@ const data = [
     id: 7,
     Title: "Illum veritatis corrupti exercitationem sed velit",
     Published_at: "16/10/2012",
-    Com: <TiTickOutline className="text-2xl text-[#3E51B5]" />,
+    Com: <TiTick />,
     Views: 133,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -97,7 +112,7 @@ const data = [
     id: 9,
     Title: "Maiores et itaque aut perspiciatis",
     Published_at: "29/09/2012",
-    Com: <MdOutlineCancel className="text-red-600 text-2xl" />,
+    Com: <Cancel />,
     Views: 685,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -106,7 +121,7 @@ const data = [
     id: 10,
     Title: "Sint dignissimos in architecto aut",
     Published_at: "05/09/2012",
-    Com: <TiTickOutline className="text-[#3E51B5] text-2xl" />,
+    Com: <TiTick />,
     Views: 563,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -115,7 +130,7 @@ const data = [
     id: 11,
     Title: "Perspiciatis adipisci vero qui ipsam iure porro",
     Published_at: "12/08/2012",
-    Com: <TiTickOutline className="text-[#3E51B5] text-2xl" />,
+    Com: <TiTick />,
     Views: 467,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -124,7 +139,7 @@ const data = [
     id: 12,
     Title: "Accusantium qui nihil voluptatum quia voluptas maxime ab similique",
     Published_at: "08/08/2012",
-    Com: <TiTickOutline className="text-[#3E51B5] text-2xl" />,
+    Com: <TiTick />,
     Views: 143,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
@@ -133,42 +148,98 @@ const data = [
     id: 13,
     Title: "Sed quo et et fugiat modi",
     Published_at: "11/05/2012",
-    Com: <TiTickOutline className="text-[#3E51B5] text-2xl" />,
+    Com: <TiTick />,
     Views: 557,
     Editbutton: <EditButton />,
     Showbutton: <ShowButton />,
   },
 ];
 
-const Table = ({ name }: Props) => (
-  <div className="p-10">
-    <table className="border-collapse space-y-10 bg-white w-full">
-      <thead>
-        <tr className="text-left">
-          <th className="w-[5%] p-3">Id</th>
-          <th className="w-[35%]">Title</th>
-          <th className="w-[15%]">Published at</th>
-          <th className="w-[10%]">Com.</th>
-          <th className="w-[10%]">Views</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(
-          ({ id, Title, Published_at, Com, Views, Editbutton, Showbutton }) => (
-            <tr className="divide-y-2">
-              <td className="w-[5%] p-3">{id}</td>
-              <td className="w-[50%] truncate">{Title}</td>
-              <td className="w-[7%]">{Published_at}</td>
-              <td className="w-[7%]">{Com}</td>
-              <td className="w-[7%]">{Views}</td>
-              <td className="w-[7%]">{Editbutton}</td>
-              <td className="w-[7%] px-5">{Showbutton}</td>
-            </tr>
-          )
+const Table = () => {
+  const [name, setName] = useState("");
+
+  const [foundUsers, setFoundUsers] = useState(USERS);
+
+  const filter = (e: any) => {
+    const keyword = e.target.value;
+
+    if (keyword !== "") {
+      const results = USERS.filter((user) => {
+        return user.Title.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    } else {
+      setFoundUsers(USERS);
+    }
+
+    setName(keyword);
+  };
+  return (
+    <div className="p-5 space-y-5">
+      <div className="border-0 flex justify-between items-center bg-gray-200 rounded-lg rounded-b-none w-72 focus:border-b-primary border-b-2">
+        <input
+          type="search"
+          value={name}
+          onChange={filter}
+          className="bg-gray-200 border-0 w-full"
+          placeholder="Search by Title"
+        />
+        <GoSearch className="m-3 text-xl" />
+      </div>
+      <table className="border-collapse space-y-10 bg-white w-full lg:block hidden shadow-sm p-2">
+        <thead>
+          <tr className="text-left">
+            <th className="w-[5%] p-3">Id</th>
+            <th className="w-[35%]">Title</th>
+            <th className="w-[15%]">Published at</th>
+            <th className="w-[10%]">Com.</th>
+            <th className="w-[10%]">Views</th>
+          </tr>
+        </thead>
+        <tbody>
+          {foundUsers && foundUsers.length > 0 ? (
+            foundUsers.map((user) => (
+              <tr className="divide-y-2">
+                <td className="w-[5%] p-3 px-4 text-primary font-medium border-t-2">
+                  {user.id}
+                </td>
+                <td className="w-[50%] text-ellipses">{user.Title}</td>
+                <td className="w-[7%] italic">{user.Published_at}</td>
+                <td className="w-[7%]">{user.Com}</td>
+                <td className="w-[7%]">{user.Views}</td>
+                <td className="w-[7%]">{user.Editbutton}</td>
+                <td className="w-[7%] px-5">{user.Showbutton}</td>
+              </tr>
+            ))
+          ) : (
+            <h1 className="text-lg whitespace-nowrap mt-5 ml-3">
+              Post Not Found!
+            </h1>
+          )}
+        </tbody>
+      </table>
+      {/* Mobile View */}
+      <div className="block lg:hidden bg-white p-2 rounded-lg shadow-sm">
+        {foundUsers && foundUsers.length > 0 ? (
+          foundUsers.map((user) => (
+            <div className="bg-white  p-3">
+              <div className="flex md:justify-between justify-start md:flex-row flex-col">
+                {user.Title}
+                <p className="text-gray-600 md:ml-0 ml-auto">
+                  {user.Published_at}
+                </p>
+              </div>
+              <p className="text-gray-600 md:-mt-0 -mt-5 text-sm">
+                {user.Views} views
+              </p>
+            </div>
+          ))
+        ) : (
+          <h1 className="text-lg whitespace-nowrap ml-3">Post Not Found!</h1>
         )}
-      </tbody>
-    </table>
-  </div>
-);
+      </div>
+    </div>
+  );
+};
 
 export default Table;
