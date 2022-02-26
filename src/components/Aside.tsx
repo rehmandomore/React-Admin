@@ -11,11 +11,11 @@ type Props = {
 const Aside: React.FC<Props> = ({ isVisible }) => {
   return (
     <div
-      className={`w-72 bg-white h-screen duration-700 lg:relative absolute  lg:shadow-none shadow-2xl group-hover:-ml-72  ${
+      className={`w-72 bg-white h-screen duration-700 lg:relative fixed lg:shadow-none shadow-2xl group-hover:-ml-72  ${
         isVisible ? "w-20 lg:-ml-0 -ml-20" : "w-72"
       }`}
     >
-      <ul className="space-y-2 mt-5">
+      <ul className="space-y-3 mt-5">
         <li className="group hover:bg-gray-300 flex items-center">
           <Link to="/" className="flex items-center w-full p-3 px-5">
             <AiTwotoneFile className="text-primary text-2xl mr-3 group-hover:scale-125 duration-500" />

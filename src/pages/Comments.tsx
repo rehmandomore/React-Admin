@@ -41,7 +41,7 @@ const data = [
     ),
     username: "Kiley Pouros",
     date: "08/08/2012",
-    info: "White Rabbit: it was indeed: she was out of the ground--and I should frighten them out of its right paw round, 'lives a March Hare. 'Sixteenth,'.",
+    info: "White Rabbit: it was indeed: she was out of the ground--and I should frighten them out of its right paw round.",
     about: "About",
     aboutData: "A voluptas eius eveniet ut commodi dolor",
     showButton: <ShowButton />,
@@ -128,7 +128,7 @@ const Comments = ({ name }: Props) => {
                 {about}
                 <p className="ml-3 text-[#4c61da]">{aboutData}</p>
               </div>
-              <div className="flex justify-end items-end mt-10 gap-5">
+              <div className="flex justify-end mt-10 gap-5">
                 {editButton}
                 {showButton}
               </div>
