@@ -35,9 +35,12 @@ const Tags = () => {
   const handleFilterOpening5 = () => {
     setIsOpen5((isOpen5) => !isOpen5);
   };
+
+  let name = ["name1", "name2"];
+
   return (
     <div className="m-10 w-96 bg-white shadow-md rounded-lg p-2 space-y-2">
-      <div className="Collapse-1 hover:bg-gray-100">
+      <div className="Collapse">
         <div className="p-3 flex justify-between">
           <button
             onClick={handleFilterOpening1}
@@ -68,7 +71,7 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="Collapse-2 hover:bg-gray-100">
+      <div className="Collapse">
         <div className="p-3 flex justify-between">
           <button
             onClick={handleFilterOpening2}
@@ -103,7 +106,7 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="Collapse-3 hover:bg-gray-100">
+      <div className="Collapse">
         <div className="p-3 flex justify-between">
           <button
             onClick={handleFilterOpening3}
@@ -134,7 +137,7 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="Collapse-4 hover:bg-gray-100">
+      <div className="Collapse">
         <div className="p-3 flex justify-between">
           <button
             onClick={handleFilterOpening4}
@@ -165,7 +168,7 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="Collapse-5 hover:bg-gray-100">
+      <div className="Collapse">
         <div className="p-3 flex justify-between">
           <button
             onClick={handleFilterOpening5}

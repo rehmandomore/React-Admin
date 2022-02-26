@@ -38,12 +38,6 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-.input {
-  outline: none !important;
-}
-.input:focus {
-  outline: none !important;
-}
 
 @layer components {
   .primary_button {
@@ -72,6 +66,9 @@
   }
   .dashboard_card {
     @apply bg-white shadow-lg  rounded-lg h-48 md:w-80 w-full p-3 flex items-center  duration-500 justify-evenly;
+  }
+  .Collapse {
+    @apply active:bg-gray-200 hover:bg-gray-100;
   }
 }
 

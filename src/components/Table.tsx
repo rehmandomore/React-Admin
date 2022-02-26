@@ -186,7 +186,7 @@ const Table = () => {
         />
         <GoSearch className="m-3 text-xl" />
       </div>
-      <table className="border-collapse space-y-10 bg-white w-full lg:block hidden shadow-sm p-2">
+      <table className="border-collapse space-y-10 bg-white w-full lg:block hidden rounded-md shadow-sm p-2">
         <thead>
           <tr className="text-left">
             <th className="w-[5%] p-3">Id</th>

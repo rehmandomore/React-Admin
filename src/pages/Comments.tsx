@@ -1,6 +1,8 @@
 import { BiUser } from "react-icons/bi";
 import { BiShowAlt } from "react-icons/bi";
 import { HiPencil } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 type Props = {
   name?: string;
