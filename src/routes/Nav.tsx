@@ -29,8 +29,8 @@ const Nav = ({ onMenuClick, name }: Props) => {
   return (
     <>
       <div className="h-20 bg-white flex items-center">
-        <button onClick={onMenuClick} className="group ml-5 ">
-          <HiOutlineMenuAlt1 className="text-white bg-primary p-2 h-12 w-12  rounded-full" />
+        <button onClick={onMenuClick} className="group ml-5">
+          <HiOutlineMenuAlt1 className="text-white bg-primary p-2 h-12 w-12 rounded-full" />
         </button>
         <h2 className="ml-5">{pageName}</h2>
       </div>

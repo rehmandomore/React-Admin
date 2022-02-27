@@ -30,9 +30,9 @@ const EditButton = () => (
 );
 
 const ShowButton = () => (
-  <button className="flex items-center">
-    <BiShowAlt className="text-2xl text-[#3E51B5]" />
-    <p className="ml-2 text-[#3E51B5] font-[600] text-sm">SHOW</p>
+  <button className="flex items-center text-[#3E51B5]">
+    <BiShowAlt className="text-2xl" />
+    <p className="ml-2 font-semibold text-sm">SHOW</p>
   </button>
 );
 
@@ -190,7 +190,7 @@ const Table = () => {
         <thead>
           <tr className="text-left">
             <th className="w-[5%] p-3">Id</th>
-            <th className="w-[35%]">Title</th>
+            <th className="w-[50%]">Title</th>
             <th className="w-[15%]">Published at</th>
             <th className="w-[10%]">Com.</th>
             <th className="w-[10%]">Views</th>
@@ -203,12 +203,12 @@ const Table = () => {
                 <td className="w-[5%] p-3 px-4 text-primary font-medium border-t-2">
                   {user.id}
                 </td>
-                <td className="w-[50%] text-ellipses">{user.Title}</td>
-                <td className="w-[7%] italic">{user.Published_at}</td>
-                <td className="w-[7%]">{user.Com}</td>
-                <td className="w-[7%]">{user.Views}</td>
-                <td className="w-[7%]">{user.Editbutton}</td>
-                <td className="w-[7%] px-5">{user.Showbutton}</td>
+                <td className="w-[50%]">{user.Title}</td>
+                <td className="w-[15%] italic">{user.Published_at}</td>
+                <td className="w-[10%]">{user.Com}</td>
+                <td className="w-[10%]">{user.Views}</td>
+                <td className="w-[5%]">{user.Editbutton}</td>
+                <td className="w-[5%] px-5">{user.Showbutton}</td>
               </tr>
             ))
           ) : (
