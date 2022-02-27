@@ -6,31 +6,27 @@ import { MdOutlineCancel } from "react-icons/md";
 import { GoSearch } from "react-icons/go";
 
 const TiTick = () => (
-  <div className="flex flex-col group cursor-pointer w-min ">
+  <div className="flex flex-col group cursor-pointer w-min">
     <TiTickOutline className="text-2xl text-primary" />
-    <div className="bg-gray-200 text-black rounded-lg p-1 px-4 text-md italic -ml-4 w-min absolute mt-7 group-hover:block hidden">
-      Yes
-    </div>
+    <div className="tooltip">Yes</div>
   </div>
 );
 const Cancel = () => (
-  <div className="flex flex-col group cursor-pointer w-min ">
+  <div className="flex flex-col group cursor-pointer w-min">
     <MdOutlineCancel className="text-2xl text-red-600" />
-    <div className="bg-gray-200 text-black rounded-lg p-1 px-4 text-md italic -ml-4 w-min absolute mt-7 group-hover:block hidden">
-      No
-    </div>
+    <div className="tooltip">No</div>
   </div>
 );
 
 const EditButton = () => (
-  <button className="flex items-center">
-    <HiPencil className="text-2xl text-[#3E51B5]" />
-    <p className="ml-2 text-[#3E51B5] font-[600] text-sm">EDIT</p>
+  <button className="flex items-center text-primary">
+    <HiPencil className="text-2xl" />
+    <p className="ml-2 font-semibold text-sm">EDIT</p>
   </button>
 );
 
 const ShowButton = () => (
-  <button className="flex items-center text-[#3E51B5]">
+  <button className="flex items-center text-primary">
     <BiShowAlt className="text-2xl" />
     <p className="ml-2 font-semibold text-sm">SHOW</p>
   </button>
@@ -184,9 +180,9 @@ const Table = () => {
           className="bg-gray-200 border-0 w-full"
           placeholder="Search by Title"
         />
-        <GoSearch className="m-3 text-xl" />
+        <GoSearch className="m-3 text-xl cursor-pointer" />
       </div>
-      <table className="border-collapse space-y-10 bg-white w-full lg:block hidden rounded-md shadow-sm p-2">
+      <table className="bg-white lg:block hidden rounded-md shadow-sm p-2">
         <thead>
           <tr className="text-left">
             <th className="w-[5%] p-3">Id</th>
@@ -212,9 +208,7 @@ const Table = () => {
               </tr>
             ))
           ) : (
-            <h1 className="text-lg whitespace-nowrap mt-5 ml-3">
-              Post Not Found!
-            </h1>
+            <h1 className="text-lg whitespace-nowrap p-3">Post Not Found!</h1>
           )}
         </tbody>
       </table>
