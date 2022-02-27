@@ -104,49 +104,38 @@ const Comments = ({ name }: Props) => {
   return (
     <>
       <div className="p-5 lg:grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 hidden">
-        {data.map(
-          ({
-            userIcon,
-            username,
-            date,
-            info,
-            about,
-            aboutData,
-            showButton,
-            editButton,
-          }) => (
-            <div className="p-7 bg-white shadow-lg">
-              <div className="flex items-center gap-2">
-                {userIcon}
-                <div>
-                  {username}
-                  <p className="text-gray-500 text-sm">{date}</p>
-                </div>
-              </div>
-              <div className="mt-10 pr-10">{info}</div>
-              <div className="flex  mt-10">
-                {about}
-                <p className="ml-3 text-[#4c61da]">{aboutData}</p>
-              </div>
-              <div className="flex justify-end mt-10 gap-5">
-                {editButton}
-                {showButton}
+        {data.map((data) => (
+          <div className="p-7 bg-white shadow-lg" key={data.id}>
+            <div className="flex items-center gap-2">
+              {data.userIcon}
+              <div>
+                {data.username}
+                <p className="text-gray-500 text-sm">{data.date}</p>
               </div>
             </div>
-          )
-        )}
+            <div className="mt-10 pr-10">{data.info}</div>
+            <div className="flex  mt-10">
+              {data.about}
+              <p className="ml-3 text-[#4c61da]">{data.aboutData}</p>
+            </div>
+            <div className="flex justify-end mt-10 gap-5">
+              {data.editButton}
+              {data.showButton}
+            </div>
+          </div>
+        ))}
       </div>
       {/* Mobile View */}
       <div className="p-5 space-y-8 lg:hidden block ">
-        {data.map(({ userIcon, username, info, date }) => (
-          <div className="flex items-start">
-            {userIcon}
+        {data.map((data) => (
+          <div className="flex items-start" key={data.id}>
+            {data.userIcon}
             <div className="flex flex-col ml-5 w-full">
               <div className="flex justify-between">
-                {username}
-                <p className="text-md text-gray-800"> {date}</p>
+                {data.username}
+                <p className="text-md text-gray-800"> {data.date}</p>
               </div>
-              <p className="text-gray-500 mt-1">{info}</p>
+              <p className="text-gray-500 mt-1">{data.info}</p>
             </div>
           </div>
         ))}
