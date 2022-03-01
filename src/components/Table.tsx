@@ -171,20 +171,20 @@ const Table = () => {
   };
   return (
     <div className="p-5 space-y-5">
-      <div className="bg-gray-200 w-56 flex items-center rounded-lg">
+      <div className="bg-gray-200 w-56 flex items-center rounded-lg text-primary">
         <input
           type="search"
           value={name}
           onChange={filter}
-          className="border-0 bg-gray-200 p-3 rounded-lg"
-          placeholder="Search...."
+          className="border-0 bg-gray-200 p-3 rounded-lg focus:placeholder:text-primary"
+          placeholder="Search..."
         />
         <GoSearch />
       </div>
       <table className="bg-white lg:block hidden rounded-md shadow-sm p-2">
         <thead>
           <tr className="text-left">
-            <th className="w-[5%] p-3">Id</th>
+            <td className="w-[5%] p-3">Id</td>
             <th className="w-[50%]">Title</th>
             <th className="w-[15%]">Published at</th>
             <th className="w-[10%]">Com.</th>

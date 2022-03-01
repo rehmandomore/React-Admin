@@ -3,6 +3,7 @@ import { AiTwotoneFile, AiFillCaretLeft } from "react-icons/ai";
 import { SiGooglemessages } from "react-icons/si";
 import { BsTagsFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
 type Props = {
   isVisible?: boolean;
@@ -28,6 +29,20 @@ const Aside = ({ isVisible }: Props) => {
           >
             <AiFillCaretLeft className="absolute -left-4 text-2xl text-primary" />
             <p className="text-white ml-2">Posts</p>
+          </div>
+        </li>
+        <li className="group hover:bg-gray-300 flex items-center">
+          <Link to="/Users" className="flex items-center w-full p-3 px-5">
+            <FaUserCircle className="text-primary  text-2xl mr-3 group-hover:scale-125 duration-500" />
+            <p className={`${isVisible ? "hidden" : "block"}`}>Users</p>
+          </Link>
+          <div
+            className={`absolute bg-primary rounded-md hidden p-1 -right-12 w-16 ${
+              isVisible ? "group-hover:block" : "hidden"
+            }`}
+          >
+            <AiFillCaretLeft className="absolute -left-4 text-2xl text-primary" />
+            <p className="text-white ml-3">Users</p>
           </div>
         </li>
         <li className="group hover:bg-gray-300 flex items-center">
