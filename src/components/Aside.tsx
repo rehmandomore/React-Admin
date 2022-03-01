@@ -42,7 +42,7 @@ const Aside = ({ isVisible }: Props) => {
             }`}
           >
             <AiFillCaretLeft className="absolute -left-4 text-2xl text-primary" />
-            <p className="text-white ml-3">Users</p>
+            <p className="text-white ml-2">Users</p>
           </div>
         </li>
         <li className="group hover:bg-gray-300 flex items-center">
