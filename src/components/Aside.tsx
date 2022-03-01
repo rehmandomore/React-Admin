@@ -8,10 +8,10 @@ type Props = {
   isVisible?: boolean;
 };
 
-const Aside: React.FC<Props> = ({ isVisible }) => {
+const Aside = ({ isVisible }: Props) => {
   return (
     <div
-      className={`w-72 bg-white h-screen duration-700 lg:relative fixed lg:shadow-none shadow-2xl group-hover:-ml-72  ${
+      className={`w-72 bg-white h-screen duration-700 lg:relative absolute lg:shadow-none shadow-2xl group-hover:-ml-72  ${
         isVisible ? "w-20 lg:-ml-0 -ml-20" : "w-72"
       }`}
     >

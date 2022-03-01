@@ -152,8 +152,35 @@ const USERS = [
 ];
 
 const Table = () => {
+  const [name, setName] = useState("");
+
+  const [foundUsers, setFoundUsers] = useState(USERS);
+
+  const filter = (e: any) => {
+    const keyword = e.target.value;
+
+    if (keyword !== "") {
+      const results = USERS.filter((user) => {
+        return user.Title.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    } else {
+      setFoundUsers(USERS);
+    }
+    setName(keyword);
+  };
   return (
     <div className="p-5 space-y-5">
+      <div className="bg-gray-200 w-56 flex items-center rounded-lg">
+        <input
+          type="search"
+          value={name}
+          onChange={filter}
+          className="border-0 bg-gray-200 p-3 rounded-lg"
+          placeholder="Search...."
+        />
+        <GoSearch />
+      </div>
       <table className="bg-white lg:block hidden rounded-md shadow-sm p-2">
         <thead>
           <tr className="text-left">
@@ -165,36 +192,42 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {USERS.map((user) => (
-            <tr className="divide-y-2" key={user.id}>
-              <td className="w-[5%] p-3 px-4 text-primary font-medium border-t-2">
-                {user.id}
-              </td>
-              <td className="w-[50%]">{user.Title}</td>
-              <td className="w-[15%] italic">{user.Published_at}</td>
-              <td className="w-[10%]">{user.Com}</td>
-              <td className="w-[10%]">{user.Views}</td>
-              <td className="w-[5%]">{user.Editbutton}</td>
-              <td className="w-[5%] px-5">{user.Showbutton}</td>
-            </tr>
-          ))}
+          {foundUsers && foundUsers.length > 0
+            ? foundUsers.map((user) => (
+                <tr className="divide-y-2" key={user.id}>
+                  <td className="w-[5%] p-3 px-4 text-primary font-medium border-t-2">
+                    {user.id}
+                  </td>
+                  <td className="w-[50%]">{user.Title}</td>
+                  <td className="w-[15%] italic">{user.Published_at}</td>
+                  <td className="w-[10%]">{user.Com}</td>
+                  <td className="w-[10%]">{user.Views}</td>
+                  <td className="w-[5%]">{user.Editbutton}</td>
+                  <td className="w-[5%] px-5">{user.Showbutton}</td>
+                </tr>
+              ))
+            : null}
         </tbody>
       </table>
       {/* Mobile View */}
       <div className="block lg:hidden bg-white p-2 rounded-lg shadow-sm">
-        {USERS.map((user) => (
-          <div className="bg-white p-3" key={user.id}>
-            <div className="flex md:justify-between justify-start md:flex-row flex-col">
-              {user.Title}
-              <p className="text-gray-600 md:ml-0 ml-auto">
-                {user.Published_at}
+        {foundUsers && foundUsers.length > 0 ? (
+          foundUsers.map((user) => (
+            <div className="bg-white p-3" key={user.id}>
+              <div className="flex md:justify-between justify-start md:flex-row flex-col">
+                {user.Title}
+                <p className="text-gray-600 md:ml-0 ml-auto">
+                  {user.Published_at}
+                </p>
+              </div>
+              <p className="text-gray-600 md:-mt-0 -mt-5 text-sm">
+                {user.Views} views
               </p>
             </div>
-            <p className="text-gray-600 md:-mt-0 -mt-5 text-sm">
-              {user.Views} views
-            </p>
-          </div>
-        ))}
+          ))
+        ) : (
+          <h1 className="p-2 text-2xl">No results found!</h1>
+        )}
       </div>
     </div>
   );

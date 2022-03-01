@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 
@@ -7,8 +7,8 @@ type Props = {
   onMenuClick?: () => void;
 };
 
-const Nav = ({ onMenuClick, name }: Props) => {
-  let [pageName, setPageName] = React.useState<string>("Posts");
+const Nav = ({ onMenuClick }: Props) => {
+  let [pageName, setPageName] = useState<string>("Posts");
   let location = useLocation();
 
   const displayPageName = () => {
@@ -22,7 +22,7 @@ const Nav = ({ onMenuClick, name }: Props) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     displayPageName();
   }, [location.pathname]);
 

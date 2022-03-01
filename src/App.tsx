@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="overflow-hidden h-screen">
+      <div className="h-screen">
         <Header onMenuClick={toggleSidebar} />
         <div className="flex">
           <Aside isVisible={showSideMenu} />
