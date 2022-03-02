@@ -3,19 +3,16 @@ import { GoSearch } from "react-icons/go";
 
 const usersData = [
   {
-    input: <input type="checkbox" className="rounded-sm" />,
     id: 1,
     name: "Annamarie Mayer",
     role: "user",
   },
   {
-    input: <input type="checkbox" className="rounded-sm" />,
     id: 2,
     name: "Breanna Gibson",
     role: "user",
   },
   {
-    input: <input type="checkbox" className="rounded-sm" />,
     id: 3,
     name: "Logan Schowalter",
     role: "admin",
@@ -52,23 +49,19 @@ const UsersTable = () => {
         />
         <GoSearch />
       </div>
-      <table className="bg-white rounded-md shadow-sm w-full h-48">
+      <table className="bg-white rounded-md shadow-sm w-full">
         <thead>
-          <tr>
-            <td className="w-[10%]"></td>
-            <td className="w-[25%] py-2">id</td>
-            <td className="w-[30%]">Name</td>
-            <td className="w-[30%]">Role</td>
+          <tr className="h-12">
+            <td className="w-[20%] px-5">id</td>
+            <td className="w-[40%]">Name</td>
+            <td className="w-[40%]">Role</td>
           </tr>
         </thead>
         <tbody>
           {foundUsers && foundUsers.length > 0
             ? foundUsers.map((user) => (
-                <tr key={user.id} className="divide-y-2">
-                  <td className="w-[10%] px-5 border-t-2 border-b-2">
-                    {user.input}
-                  </td>
-                  <td className="w-[10%]">{user.id}</td>
+                <tr key={user.id} className="divide-y-2 h-12">
+                  <td className="w-[20%] px-5 border-t-2">{user.id}</td>
                   <td className="w-[40%]">{user.name}</td>
                   <td className="w-[40%]">{user.role}</td>
                 </tr>

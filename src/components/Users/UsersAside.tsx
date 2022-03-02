@@ -6,7 +6,7 @@ type Props = {
 
 const UsersAside = ({ name }: Props) => {
   return (
-    <div className="w-96 mt-16">
+    <div className="w-96 mt-16 lg:block hidden">
       <h2>App Users</h2>
       <p>
         Eiusmod adipisicing tempor duis qui. Ullamco aliqua tempor incididunt
