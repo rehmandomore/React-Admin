@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { GoSearch } from "react-icons/go";
 
-type Props = {
-  name?: string;
-};
-
 const usersData = [
   {
     input: <input type="checkbox" className="rounded-sm" />,
